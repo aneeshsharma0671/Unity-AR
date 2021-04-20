@@ -7,6 +7,8 @@ using UnityEngine.XR.ARFoundation.Samples;
 
 public class TapToPlace : MonoBehaviour
 {
+    private GameObject Spawned_Object;
+    public GameObject Object_prefab;
    
     PlaneDetectionController m_planeDetectionController;
     //Remove all reference points created
@@ -48,23 +50,45 @@ public class TapToPlace : MonoBehaviour
        
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
-        if(touchPosition.y > (Screen.height/4))
-        if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
+        if (touchPosition.y > (Screen.height / 4))
         {
-            // Raycast hits are sorted by distance, so the first one
-            // will be the closest hit.
-            var hitPose = s_Hits[0].pose;
-            TrackableId planeId = s_Hits[0].trackableId; //get the ID of the plane hit by the raycast
-            var referencePoint = m_ReferencePointManager.AttachAnchor(m_PlaneManager.GetPlane(planeId), hitPose);
-            if (referencePoint != null)
+        /*    if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
             {
-                RemoveAllReferencePoints();
-                m_ReferencePoint.Add(referencePoint);
+                // Raycast hits are sorted by distance, so the first one
+                // will be the closest hit.
+                var hitPose = s_Hits[0].pose;
+                TrackableId planeId = s_Hits[0].trackableId; //get the ID of the plane hit by the raycast
+                var referencePoint = m_ReferencePointManager.AttachAnchor(m_PlaneManager.GetPlane(planeId), hitPose);
+                if (referencePoint != null)
+                {
+                    RemoveAllReferencePoints();
+                    m_ReferencePoint.Add(referencePoint);
+                }
+                if (m_planeDetectionController.m_ARPlaneManager.enabled)
+                {
+                    m_planeDetectionController.TogglePlaneDetection();
+                }
             }
-            if(m_planeDetectionController.m_ARPlaneManager.enabled)
+        */
+            if(m_RaycastManager.Raycast(touchPosition,s_Hits,TrackableType.PlaneWithinPolygon))
             {
-             m_planeDetectionController.TogglePlaneDetection();
-            } 
+                var hitpos = s_Hits[0].pose;
+                if(Spawned_Object == null)
+                {
+                    Spawned_Object = Instantiate(Object_prefab, hitpos.position, hitpos.rotation);
+                }
+                else
+                {
+                    Spawned_Object.transform.position = hitpos.position;
+                    Spawned_Object.transform.rotation = hitpos.rotation;
+                }
+
+
+                if (m_planeDetectionController.m_ARPlaneManager.enabled)
+                {
+                    m_planeDetectionController.TogglePlaneDetection();
+                }
+            }
         }
     }
 

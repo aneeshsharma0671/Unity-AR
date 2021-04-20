@@ -7,6 +7,11 @@ public class ObjectSize : MonoBehaviour
 {
     public Slider Size_slider;
 
+    public void Start()
+    {
+        Size_slider = GameObject.Find("Slider").GetComponent<Slider>();
+    }
+
     private void Awake()
     {
         Size_slider = GameObject.Find("Slider").GetComponent<Slider>();
