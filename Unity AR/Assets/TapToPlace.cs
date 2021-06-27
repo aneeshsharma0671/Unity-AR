@@ -4,12 +4,15 @@ using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.ARFoundation.Samples;
+using TMPro;
 
 public class TapToPlace : MonoBehaviour
 {
     private GameObject Spawned_Object;
     public GameObject Object_prefab;
-   
+    public PlaneDetectionController planeDetection;
+    public TMP_Text text_feild;
+    public GameObject LockButton;
     PlaneDetectionController m_planeDetectionController;
     //Remove all reference points created
     public void RemoveAllReferencePoints()
@@ -83,6 +86,7 @@ public class TapToPlace : MonoBehaviour
                     Spawned_Object.transform.rotation = hitpos.rotation;
                 }
 
+                LockButton.SetActive(true);
 
                 if (m_planeDetectionController.m_ARPlaneManager.enabled)
                 {
@@ -91,6 +95,8 @@ public class TapToPlace : MonoBehaviour
             }
         }
     }
+
+
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 

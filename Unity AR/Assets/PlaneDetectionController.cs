@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.XR.ARFoundation;
 
 namespace UnityEngine.XR.ARFoundation.Samples
@@ -16,7 +17,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         [Tooltip("The UI Text element used to display plane detection messages.")]
         [SerializeField]
         Text m_TogglePlaneDetectionText;
-        public Text Text_Field;
+        public TMP_Text Text_Field;
 
         public bool Plane_Detected = false;
         /// <summary>
