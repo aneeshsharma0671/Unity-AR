@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Raycast : MonoBehaviour
 {
-    public InfoManager infomanager;
     public void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,7 +12,7 @@ public class Raycast : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                infomanager.updateSentence(hit.transform.name);
+                hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 Debug.Log(hit.transform.name);
             }
         }

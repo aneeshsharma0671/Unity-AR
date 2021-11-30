@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6873704885737266466}
   - component: {fileID: 1888692698480007452}
+  - component: {fileID: 4752241677431454943}
   m_Layer: 0
   m_Name: spine
   m_TagString: Untagged
@@ -44,6 +45,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11, y: 1.28, z: 0.14}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4752241677431454943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201332692604838179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cfb0c15e84c2e48b36b0f8dbbc2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Spine
+    sentences:
+    - I am spine
 --- !u!1 &4752241677403381036
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +182,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4752241678600795407}
+      - m_Target: {fileID: 4752241678600795407, guid: 4ef0549aaeb050549ba8e33939f0e79e, type: 3}
         m_TargetAssemblyTypeName: InfoManager, Assembly-CSharp
         m_MethodName: nextSentence
         m_Mode: 1
@@ -187,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752241677938123165}
   - component: {fileID: 4752241677938123166}
+  - component: {fileID: 4752241677431454944}
   m_Layer: 0
   m_Name: ribcage
   m_TagString: Untagged
@@ -221,6 +239,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.51, y: 0.59, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4752241677431454944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752241677938123164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cfb0c15e84c2e48b36b0f8dbbc2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Ribcage
+    sentences:
+    - I am Ribcage
 --- !u!1 &4752241678053998934
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752241678394683487}
   - component: {fileID: 4752241678394683472}
+  - component: {fileID: 1394889667}
   m_Layer: 0
   m_Name: skull
   m_TagString: Untagged
@@ -428,6 +463,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.38, y: 0.52, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1394889667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752241678394683486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cfb0c15e84c2e48b36b0f8dbbc2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Skull
+    sentences:
+    - Hello I am Skull
+    - 'I am Empty
+
+'
 --- !u!1 &4752241678413538226
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +625,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752241678600795406}
-  - component: {fileID: 4752241678600795407}
   - component: {fileID: 4752241678600795392}
   m_Layer: 0
   m_Name: InfoManager
@@ -594,42 +647,6 @@ Transform:
   m_Father: {fileID: 4752241678318801427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4752241678600795407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4752241678600795405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96895be206e6e9745875a6e76b6e27cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 4752241678948538532}
-  items:
-  - Title: skeleton
-    sentence:
-    - This is Skeleton
-  - Title: skull
-    sentence:
-    - This is Skull
-  - Title: ribcage
-    sentence:
-    - This is Ribcage
-  - Title: spine
-    sentence:
-    - This is Spine
-  - Title: pelvis
-    sentence:
-    - This is Pelvis
-  - Title: limb
-    sentence:
-    - This is Limb
-  - Title: empty
-    sentence:
-    - empty
-  typingSpeed: 0.02
 --- !u!114 &4752241678600795392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc8a6d39022a04491912208b62f56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infomanager: {fileID: 4752241678600795407}
 --- !u!1 &4752241678948538530
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752241679034362973}
   - component: {fileID: 4752241679034362974}
+  - component: {fileID: 4752241677431454941}
   m_Layer: 0
   m_Name: limb
   m_TagString: Untagged
@@ -821,6 +838,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41, y: 1.67, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4752241677431454941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752241679034362972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cfb0c15e84c2e48b36b0f8dbbc2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Limbs
+    sentences:
+    - 'We are limbs
+
+'
 --- !u!1 &4752241679235397724
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4947300391060127380}
   - component: {fileID: 6012318299412908319}
+  - component: {fileID: 4752241677431454942}
   m_Layer: 0
   m_Name: pelvis
   m_TagString: Untagged
@@ -900,6 +936,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39, y: 0.23, z: 0.26}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4752241677431454942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131460322963852334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cfb0c15e84c2e48b36b0f8dbbc2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Pelvis
+    sentences:
+    - 'I am Pelvis
+
+'
 --- !u!1001 &4752241677268624930
 PrefabInstance:
   m_ObjectHideFlags: 0
